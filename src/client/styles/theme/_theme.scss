@@ -5,12 +5,7 @@ $fourth-color: #68E83F;
 $fifth-color: #9CDE3C;
 $font-color: #FFFFFF;
 $font-base-size: 16px;
-$font-stack: Calibri,
-Candara,
-Segoe,
-"Segoe UI",
-Optima,
-Arial,
+$font-stack: 'Oswald',
 sans-serif;
 ::placeholder {
     color: $font-color;
