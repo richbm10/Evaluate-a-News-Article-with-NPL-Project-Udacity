@@ -1,0 +1,17 @@
+$primary-color: #3CDEA5;
+$secondary-color: #3CDEA5;
+$third-color: #43D04F;
+$fourth-color: #68E83F;
+$fifth-color: #9CDE3C;
+$font-color: #FFFFFF;
+$font-base-size: 16px;
+$font-stack: Calibri,
+Candara,
+Segoe,
+"Segoe UI",
+Optima,
+Arial,
+sans-serif;
+::placeholder {
+    color: $font-color;
+}

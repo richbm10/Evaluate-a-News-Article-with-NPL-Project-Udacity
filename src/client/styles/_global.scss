@@ -1,1 +1,36 @@
 @use './resets';
+%container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+%row-container {
+    @extend %container;
+    flex-flow: row nowrap;
+}
+
+%col-container {
+    @extend %container;
+    flex-flow: column nowrap;
+}
+
+.r-container-center {
+    @extend %row-container;
+    justify-content: center;
+}
+
+.r-container-left {
+    @extend %row-container;
+    justify-content: flex-start;
+}
+
+.r-container-right {
+    @extend %row-container;
+    justify-content: flex-end;
+}
+
+.c-container-center {
+    @extend %col-container;
+    justify-content: center;
+}
