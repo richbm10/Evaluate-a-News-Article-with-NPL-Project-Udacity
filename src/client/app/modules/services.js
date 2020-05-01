@@ -33,13 +33,9 @@ const Services = (function() {
         getInstance: () => {
             if (!instance) {
                 instance = {
-                    apiKey: '',
-                    baseApiURL: '',
                     baseLocalServerURL: '',
-                    weatherData: {},
-                    set: function(pApiKey, pBaseApiURL, pBaseLocalServerURL) {
-                        this.apiKey = pApiKey;
-                        this.baseApiURL = pBaseApiURL;
+                    serviceData: {},
+                    set: function(pBaseLocalServerURL) {
                         this.baseLocalServerURL = pBaseLocalServerURL;
                     },
                     setHttpRequest: function(httpMethod, httpBodyData) {
@@ -52,8 +48,8 @@ const Services = (function() {
                             body: JSON.stringify(httpBodyData)
                         };
                     },
-                    getRequestAPI: async function(query) {
-                        const response = await fetch(this.baseApiURL + query + this.apiKey);
+                    getRequestLocalServer: async function(query) {
+                        const response = await fetch(this.baseLocalServerURL + query);
                         try {
                             const data = await response.json();
                             return data;
@@ -70,16 +66,18 @@ const Services = (function() {
                             console.log("error", error);
                         }
                     },
-                    queryWeatherByZipCode: function(zipCode, countryCode) {
-                        return `zip=${zipCode},${countryCode}`;
+                    queryNlpText: function(text) {
+                        return `/nlp/evaltext?text=${text}`;
                     },
-                    queryAddWeatherFeelings: '/weather/post/addWeatherFeelings',
+                    queryNlpArticle: function(url) {
+                        return `/nlp/evalarticle?url=${url}`;
+                    },
                     handleResponse: function(response, callBack) {
                         response.cod = `${response.cod}`;
                         switch (true) {
                             case response.cod >= '200' && response.cod < '300':
                                 if ('weather' in response) {
-                                    this.weatherData = response;
+                                    this.serviceData = response;
                                 }
                                 callBack();
                                 break;
