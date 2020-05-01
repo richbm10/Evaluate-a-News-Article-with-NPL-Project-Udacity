@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: './src/client/app/index.js',
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
@@ -35,14 +35,14 @@ module.exports = {
                 test: /\.(png|jp(e*)g|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[hash]-[name].[ext]'
+                    name: 'images/[name].[ext]'
                 }
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/pages/index.html",
+            template: "./src/client/app/pages/index.html",
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({

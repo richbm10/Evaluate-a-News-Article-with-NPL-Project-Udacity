@@ -8,7 +8,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: './src/client/app/index.js',
     mode: 'development',
     output: {
         libraryTarget: 'var',
@@ -46,7 +46,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/pages/index.html",
+            template: "./src/client/app/pages/index.html",
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({
