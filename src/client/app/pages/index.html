@@ -14,9 +14,20 @@
     </header>
 
     <main id="base" class="c-container-top">
-        <img id="hero-img" />
+        <div id="hero-img">
+            <div id="combo-select">
+                <object id="drop-down-icon" type="image/svg+xml"></object>
 
-        <div id="base-content" class="c-container-top">
+                <select id="evals">
+                    <option value="urlEval">URL EVALUATION</option>
+                    <option value="textEval">TEXT EVALUATION</option>
+                </select>
+
+                <div id="h-line"></div>
+            </div>
+        </div>
+
+        <div id="base-content" class="c-container-top active-base-content">
             <form class="form c-container-top">
                 <input id="form-input" class="active-input" type="text" name="urlToEval" placeholder="article url" />
                 <textarea id="form-txt-area" class="inactive-input" name="textToEval" placeholder="text..."></textarea>

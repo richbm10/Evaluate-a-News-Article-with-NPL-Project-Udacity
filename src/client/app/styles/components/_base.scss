@@ -1,15 +1,31 @@
+.active-base-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.inactive-base-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    display: none;
+}
+
 #base {
     padding: 4vh 0;
     grid-area: base;
 }
 
 #hero-img {
+    background-image: url('../../../assets/images/light-bulb-h.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 35vh;
     width: 95vw;
 }
 
 #sentiment {
-    margin-top: 3vh;
+    margin-top: 6vh;
     display: grid;
     height: 25vh;
     grid-template-columns: 1fr 1fr;
@@ -17,7 +33,6 @@
     grid-template-areas: "picon sicon" "plabel slabel";
     place-items: center;
     place-content: center;
-    column-gap: 30%;
 }
 
 #polarity-icon {

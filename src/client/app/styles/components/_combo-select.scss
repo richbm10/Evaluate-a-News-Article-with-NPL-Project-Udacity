@@ -1,0 +1,35 @@
+#combo-select {
+    z-index: 1;
+    position: relative;
+    top: 40%;
+    left: 5%;
+    display: grid;
+    height: 7vh;
+    width: 40vw;
+    grid-template-columns: 7vw 1fr;
+    grid-template-rows: 4vh 1fr;
+    grid-template-areas: "icon select" "line line";
+    place-items: center;
+    place-content: center;
+    column-gap: 1%;
+}
+
+#evals {
+    grid-area: select;
+    -webkit-appearance: none;
+    place-self: stretch;
+    background: none;
+    border: none;
+}
+
+#h-line {
+    grid-area: line;
+    border-top: 1px solid $primary-color;
+    width: 100%;
+}
+
+#drop-down-icon {
+    grid-area: icon;
+    height: 7vh;
+    width: 7vw;
+}
