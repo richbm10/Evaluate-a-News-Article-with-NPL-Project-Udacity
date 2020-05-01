@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138.902" height="74.37" viewBox="0 0 138.902 74.37">
+  <g id="Grupo_12" data-name="Grupo 12" transform="matrix(0.985, -0.174, 0.174, 0.985, -836.112, -235.698)">
+    <g id="Caminho_6" data-name="Caminho 6" transform="translate(778.506 399.851)" fill="none">
+      <path d="M0,0H131.828V52.272H0Z" stroke="none"/>
+      <path d="M 1 0.9999961853027344 L 1 51.27225112915039 L 130.8280639648438 51.27225112915039 L 130.8280639648438 0.9999961853027344 L 1 0.9999961853027344 M 0 -3.814697265625e-06 L 131.8280639648438 -3.814697265625e-06 L 131.8280639648438 52.27225112915039 L 0 52.27225112915039 L 0 -3.814697265625e-06 Z" stroke="none" fill="#0d0903"/>
+    </g>
+    <g id="Grupo_10" data-name="Grupo 10" transform="translate(615 -30)">
+      <rect id="Retângulo_5" data-name="Retângulo 5" width="125" height="46" rx="5" transform="translate(167 433)" fill="#0d0903"/>
+      <text id="FACT" transform="translate(196.415 465.261)" fill="#f2ac29" font-size="26" font-family="ArialMT, Arial"><tspan x="0" y="0">FACT</tspan></text>
+    </g>
+  </g>
+</svg>
