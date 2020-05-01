@@ -1,0 +1,23 @@
+.form {
+    margin-top: 3vh;
+    border: none;
+}
+
+#form-input {
+    overflow: auto;
+    padding-left: 2%;
+    width: 65vw;
+}
+
+#form-txt-area {
+    overflow: auto;
+    outline: none;
+    padding: 2% 0% 0% 5%;
+    width: 65vw;
+    height: 30vh;
+}
+
+#form-button {
+    position: relative;
+    right: -1%;
+}

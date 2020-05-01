@@ -1,12 +1,21 @@
-$primary-color: #3CDEA5;
-$secondary-color: #3CDEA5;
-$third-color: #43D04F;
-$fourth-color: #68E83F;
-$fifth-color: #9CDE3C;
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+$primary-color: #F2AC29;
+$secondary-color: #0D0903;
+$third-color: #D99518;
 $font-color: #FFFFFF;
-$font-base-size: 16px;
+$font-root-size: 62.5%;
 $font-stack: 'Oswald',
 sans-serif;
+html {
+    font-size: $font-root-size;
+}
+
+body {
+    font-family: $font-stack;
+    font-size: 1.6rem;
+    background-color: $primary-color;
+}
+
 ::placeholder {
     color: $font-color;
 }

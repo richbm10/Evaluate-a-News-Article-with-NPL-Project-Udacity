@@ -5,3 +5,19 @@
 @use '../components/base';
 @use '../components/form';
 @use '../components/footer';
+body {
+    display: grid;
+    grid-template-columns: 1fr 90vw 1fr;
+    grid-template-rows: 34vh 1fr 236vh;
+    grid-template-areas: "hd hd hd" "base base base" "ft ft ft";
+}
+
+#polarity-img {
+    height: 10vh;
+    width: 10vw;
+}
+
+#subjectivity-img {
+    height: 10vh;
+    width: 20vw;
+}
