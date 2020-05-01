@@ -18,10 +18,21 @@
             <div id="combo-select">
                 <object id="drop-down-icon" type="image/svg+xml"></object>
 
-                <select id="evals">
-                    <option value="urlEval">URL EVALUATION</option>
-                    <option value="textEval">TEXT EVALUATION</option>
-                </select>
+                <div id="options">
+                    <div id="selected">
+                        URL EVALUATION
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" class="radio" id="url-eval" name="urlEval" />
+                        <label for="url-eval">URL EVALUATION</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" class="radio" id="text-eval" name="textEval" />
+                        <label for="text-eval">TEXT EVALUATION</label>
+                    </div>
+                </div>
 
                 <div id="h-line"></div>
             </div>

@@ -12,24 +12,39 @@
     place-items: center;
     place-content: center;
     column-gap: 1%;
-}
-
-#evals {
-    grid-area: select;
-    -webkit-appearance: none;
-    place-self: stretch;
-    background: none;
-    border: none;
-}
-
-#h-line {
-    grid-area: line;
-    border-top: 1px solid $primary-color;
-    width: 100%;
-}
-
-#drop-down-icon {
-    grid-area: icon;
-    height: 7vh;
-    width: 7vw;
+    #drop-down-icon {
+        grid-area: icon;
+        height: 7vh;
+        width: 7vw;
+    }
+    #options {
+        grid-area: select;
+        -webkit-appearance: none;
+        place-self: stretch;
+        background-color: transparent;
+        border: none;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.4s;
+        overflow: hidden;
+        label {
+            cursor: pointer;
+        }
+        #selected,
+        .option {
+            padding: 1%;
+            cursor: pointer;
+        }
+        .radio {
+            display: none;
+        }
+        .option:hover {
+            background-color: $third-color;
+        }
+    }
+    #h-line {
+        grid-area: line;
+        border-top: 1px solid $primary-color;
+        width: 100%;
+    }
 }
