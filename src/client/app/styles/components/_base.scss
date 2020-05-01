@@ -8,12 +8,36 @@
     width: 95vw;
 }
 
+#sentiment {
+    margin-top: 3vh;
+    display: grid;
+    height: 25vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20vh 5vh;
+    grid-template-areas: "picon sicon" "plabel slabel";
+    place-items: center;
+    place-content: center;
+    column-gap: 30%;
+}
+
 #polarity-icon {
-    height: 10vh;
-    width: 10vw;
+    grid-area: picon;
+    height: 20vh;
+    width: 25vw;
 }
 
 #subjectivity-icon {
-    height: 10vh;
-    width: 20vw;
+    grid-area: sicon;
+    height: 20vh;
+    width: 25vw;
+}
+
+#polarity-label {
+    grid-area: plabel;
+    color: $secondary-color;
+}
+
+#subjectivity-label {
+    grid-area: slabel;
+    color: $secondary-color;
 }

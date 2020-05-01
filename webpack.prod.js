@@ -31,7 +31,7 @@ module.exports = {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'fonts/[name].[ext]'
+                    name: 'assets/fonts/[name].[ext]'
                 }
             },
             {
@@ -39,7 +39,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 8000, // Convert images < 8kb to base64 strings
-                    name: 'images/[hash]-[name].[ext]'
+                    name: 'assets/images/[hash]-[name].[ext]'
                 }
             }
         ]

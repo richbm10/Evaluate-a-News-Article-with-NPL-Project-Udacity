@@ -24,18 +24,17 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
-                    outputPath: 'fonts/'
+                    name: 'assets/fonts/[name].[ext]'
                 }
             },
             {
                 test: /\.(png|jp(e*)g|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]'
+                    name: 'assets/images/[name].[ext]'
                 }
             }
         ]
@@ -49,8 +48,6 @@ module.exports = {
             filename: "[name].css"
         }),
         new CleanWebpackPlugin({
-            // Simulate the removal of files
-            dry: true,
             // Write Logs to Console
             verbose: true,
             // Automatically remove all unused webpack assets on rebuild
