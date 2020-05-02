@@ -1,6 +1,6 @@
 import { Services } from './modules/services';
 import { activeFormInput } from './modules/combo-select';
-// import { handleEvaluate } from './modules/form';
+import './modules/form';
 
 import './styles/pages/index.scss';
 
