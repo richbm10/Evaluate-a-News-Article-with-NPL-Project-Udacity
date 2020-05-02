@@ -1,19 +1,16 @@
-.active-base-content {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
-
 .inactive-base-content {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
     display: none;
 }
 
 #base {
     padding: 4vh 0;
     grid-area: base;
+}
+
+#base-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 #hero-img {

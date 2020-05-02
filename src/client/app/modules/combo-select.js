@@ -1,8 +1,22 @@
-const selected = document.querySelector('#selected');
-const options = document.querySelector('#options');
+let activeFormInput = 'url';
+
+function swapBaseContent(selectedOption) {
+    document.querySelector('#base-content').classList.toggle('inactive-base-content');
+    if (selectedOption === 'textEval') {
+        document.querySelector('#form-txt-area').style.display = 'block';
+        document.querySelector('#form-input').style.display = 'none';
+        document.querySelector('#form').urlToEval.value = '';
+        activeFormInput = 'text';
+    } else if (selectedOption === 'urlEval') {
+        document.querySelector('#form-input').style.display = 'block';
+        document.querySelector('#form-txt-area').style.display = 'none';
+        document.querySelector('#form').textToEval.value = '';
+        activeFormInput = 'url';
+    }
+}
 
 const activateOptions = () => {
-    options.classList.toggle('active-options');
+    document.querySelector('#options').classList.toggle('active-options');
 };
 
 document.querySelector('#selected').addEventListener('click', activateOptions);
@@ -11,7 +25,10 @@ document.querySelector('#drop-down-icon').addEventListener('click', activateOpti
 
 document.querySelectorAll('.option').forEach(option => {
     option.addEventListener('click', () => {
-        selected.textContent = option.querySelector('label').textContent;
-        options.classList.remove('active-options');
+        document.querySelector('#selected').textContent = option.querySelector('label').textContent;
+        document.querySelector('#options').classList.remove('active-options');
+        swapBaseContent(option.querySelector('input').name);
     });
 });
+
+export { activeFormInput };
