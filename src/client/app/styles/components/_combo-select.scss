@@ -4,11 +4,10 @@
     top: 40%;
     left: 5%;
     display: grid;
-    height: 7vh;
     width: 40vw;
     grid-template-columns: 7vw 1fr;
-    grid-template-rows: 4vh 1fr;
-    grid-template-areas: "icon select" "line line";
+    grid-template-rows: 4vh 2vh 1fr;
+    grid-template-areas: "icon select" "line line" "e op";
     place-items: center;
     place-content: center;
     column-gap: 1%;
@@ -17,22 +16,30 @@
         height: 7vh;
         width: 7vw;
     }
-    #options {
+    #selected {
         grid-area: select;
-        -webkit-appearance: none;
         place-self: stretch;
-        background-color: transparent;
-        border: none;
+        width: 110%;
+        cursor: pointer;
+    }
+    #h-line {
+        grid-area: line;
+        border-top: 1px solid $primary-color;
+        width: 100%;
+    }
+    #options {
+        grid-area: op;
+        border: 1px solid $third-color;
+        border-radius: 8px;
         max-height: 0;
         opacity: 0;
         transition: all 0.4s;
         overflow: hidden;
+        width: 110%;
         label {
             cursor: pointer;
         }
-        #selected,
         .option {
-            padding: 1%;
             cursor: pointer;
         }
         .radio {
@@ -41,10 +48,9 @@
         .option:hover {
             background-color: $third-color;
         }
-    }
-    #h-line {
-        grid-area: line;
-        border-top: 1px solid $primary-color;
-        width: 100%;
+        &.active-options {
+            max-height: 10vh;
+            opacity: 1;
+        }
     }
 }

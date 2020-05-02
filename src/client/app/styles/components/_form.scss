@@ -1,14 +1,14 @@
-.form {
-    width: 95vw;
-    margin-top: 3vh;
-    border: none;
-}
-
 %input {
     overflow: auto;
     border: 1px solid $secondary-color;
     border-radius: 5vh;
     background-color: $third-color;
+}
+
+#form {
+    width: 95vw;
+    margin-top: 3vh;
+    border: none;
 }
 
 #form-input {

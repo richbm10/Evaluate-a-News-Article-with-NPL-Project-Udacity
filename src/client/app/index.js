@@ -1,8 +1,8 @@
 import { Services } from './modules/services';
+import './modules/combo-select';
 
 import './styles/pages/index.scss';
 
-// import lightBulbH from '../assets/images/light-bulb-h.jpg';
 import dropDown from '../assets/icons/arrow_drop_down_circle-24px.svg';
 import fact from '../assets/icons/fact.svg';
 import negative from '../assets/icons/negative.svg';
@@ -11,11 +11,8 @@ import opinion from '../assets/icons/opinion.svg';
 import positive from '../assets/icons/positive.svg';
 import question from '../assets/icons/question.svg';
 
-// const heroImg = document.querySelector('#hero-img');
-// heroImg.src = lightBulbH;
-
 const dropDownIcon = document.querySelector('#drop-down-icon');
-dropDownIcon.data = dropDown;
+dropDownIcon.src = dropDown;
 
 const icons = {
     default: question,
