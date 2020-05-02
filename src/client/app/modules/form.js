@@ -1,4 +1,4 @@
-document.querySelector('#form-button').addEventListener('click', () => {
+function handleEvaluate() {
     const form = document.querySelector('#form');
     const activeFormInput = Client.activeFormInput;
     let inputToEval;
@@ -8,4 +8,8 @@ document.querySelector('#form-button').addEventListener('click', () => {
         inputToEval = form.textToEval.value;
     }
     console.log(inputToEval);
-});
+}
+
+document.querySelector('#form-button').addEventListener('click', () => { handleEvaluate() });
+
+export { handleEvaluate };
