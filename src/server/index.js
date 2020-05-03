@@ -52,28 +52,17 @@ function errorMessage(pContent) {
 }
 
 function requestAylienApi(endpoint, type, request, response) {
-    let message;
-    try {
-        const externalResponse = externalServices.getSentimentAylienApi(type, 'tweet', request.body);
-        console.log('BOMBOCLAT', externalResponse);
+    const apiParam = externalServices.setSentimentAylienApiParam(type, 'tweet', request.body);
+
+    externalServices.getSentimentAylienApi(apiParam, (externalResponse) => {
         message = successMessage(externalResponse);
         response.send(message);
         logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
-    } catch (error) {
+    }, (error) => {
         message = errorMessage(error);
         response.send(message);
         logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
-    }
-    // externalServices.getSentimentAylienApi(type, 'tweet', request.body).then((externalResponse) => {
-    //     console.log('BOMBOCLAT', externalResponse);
-    //     message = successMessage(externalResponse);
-    //     response.send(message);
-    //     logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
-    // }).catch((error) => {
-    //     message = errorMessage(error);
-    //     response.send(message);
-    //     logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
-    // });
+    });
 }
 
 app.get('/', function(req, res) {

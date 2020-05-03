@@ -16,23 +16,20 @@ const ServerServices = (function() {
                             application_key: pAylienAppKey
                         });
                     },
-                    getSentimentAylienApi: function(type, mode, message) {
-                        try {
-                            let res;
-                            await this.aylienApi.sentiment({
-                                [type]: message.content,
-                                'mode': mode
-                            }, (error, response) => {
-                                if (error === null) {
-                                    res = response;
-                                } else {
-                                    throw error;
-                                }
-                            });
-                            return res;
-                        } catch (error) {
-                            throw 'Error Not Valid Request';
-                        }
+                    setSentimentAylienApiParam: function(type, mode, message) {
+                        return {
+                            [type]: message.content,
+                            'mode': mode
+                        };
+                    },
+                    getSentimentAylienApi: async function(apiParam, resolve, reject) {
+                        this.aylienApi.sentiment(apiParam, (error, response) => {
+                            if (error === null) {
+                                resolve(response);
+                            } else {
+                                reject(error);
+                            }
+                        });
                     }
                 };
             }
