@@ -14,7 +14,7 @@ const cors = require('cors');
 app.use(cors());
 
 /* Initializing the main project folder */
-app.use(express.static('../../dist'));
+app.use(express.static('dist'));
 
 const port = 8000;
 
@@ -27,17 +27,42 @@ app.listen(port, () => {
     logActiveServer();
 });
 
+// ServerServices for requesting external services
+const { ServerServices } = require('./services');
+const externalServices = ServerServices.getInstance();
+externalServices.set('a44a01f0', '27308ad3bbef8950fc2482fbe1cfc4d1');
+
+
 const projectData = {};
 
-const confirmationMessage = {
-    cod: 200,
-    message: 'Success'
-};
+function successMessage(pContent) {
+    return {
+        cod: 200,
+        message: 'Success',
+        content: pContent
+    };
+}
 
-const errorMessage = {
-    cod: 500,
-    message: 'Internal Server Error'
-};
+function errorMessage(pContent) {
+    return {
+        cod: 500,
+        message: 'Internal Server Error',
+        content: pContent
+    };
+}
+
+function requestAylienApi(endpoint, type, request, response) {
+    let message;
+    externalServices.getSentimentAylienApi(type, 'tweet', request.body).then((externalResponse) => {
+        message = successMessage(externalResponse);
+        response.send(message);
+        logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
+    }).catch((error) => {
+        message = errorMessage(error);
+        response.send(message);
+        logActivatedService(`HTTP POST Service: ${endpoint}`, request.body, message);
+    });
+}
 
 app.get('/', function(req, res) {
     res.sendFile('dist/index.html');
@@ -47,6 +72,14 @@ app.get('/', function(req, res) {
 app.get('/all', (request, response) => {
     response.send(projectData);
     logActivatedService('HTTP GET Service: /all', '', projectData);
+});
+
+app.post('/nlp/evaltext', (request, response) => {
+    requestAylienApi('/nlp/evaltext', 'text', request, response);
+});
+
+app.post('/nlp/evalurl', (request, response) => {
+    requestAylienApi('/nlp/evalurl', 'url', request, response);
 });
 
 function logActivatedService(service, requestLog, responseLog) {
