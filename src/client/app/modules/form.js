@@ -1,10 +1,11 @@
 function submit(query, inputToEval) {
     Client.services.postRequestLocalServer(query, { 'content': inputToEval }).then((response) => {
-        try {
-            Client.services.handleResponse(response, Client.setPageData);
-        } catch (error) {
-            alert(error);
-        }
+        // try {
+        //     Client.services.handleResponse(response, Client.setPageData);
+        // } catch (error) {
+        //     alert(error);
+        // }
+        Client.services.handleResponse(response, Client.setPageData);
     }).catch(() => {
         alert('503 Server Error Connection');
     });
