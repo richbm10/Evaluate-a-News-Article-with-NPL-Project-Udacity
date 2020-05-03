@@ -40,11 +40,11 @@ function setSubjectivityIcon(subjectivityIcon) {
 }
 
 const services = Services.getInstance();
-services.set('a44a01f0', '27308ad3bbef8950fc2482fbe1cfc4d1');
+services.set('http://localhost:8000');
 
 const setPageData = () => {
     setPolarityIcon(polarityIcon);
     setSubjectivityIcon(subjectivityIcon);
 };
 
-export { Services, activeFormInput, setPageData };
+export { services, activeFormInput, setPageData };

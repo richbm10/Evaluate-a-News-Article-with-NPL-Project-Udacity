@@ -16,19 +16,20 @@ const ServerServices = (function() {
                             application_key: pAylienAppKey
                         });
                     },
-                    getSentimentAylienApi: async function(type, mode, message) {
+                    getSentimentAylienApi: function(type, mode, message) {
                         try {
-                            this.aylienApi.sentiment({
+                            let res;
+                            await this.aylienApi.sentiment({
                                 [type]: message.content,
                                 'mode': mode
                             }, (error, response) => {
                                 if (error === null) {
-                                    console.log(response);
-                                    return response;
+                                    res = response;
                                 } else {
                                     throw error;
                                 }
                             });
+                            return res;
                         } catch (error) {
                             throw 'Error Not Valid Request';
                         }

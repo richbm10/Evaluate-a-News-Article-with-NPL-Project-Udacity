@@ -1,7 +1,7 @@
 function submit(query, inputToEval) {
-    Client.Services.postRequestLocalServer(query, { 'content': inputToEval }).then((response) => {
+    Client.services.postRequestLocalServer(query, { 'content': inputToEval }).then((response) => {
         try {
-            Client.Services.handleResponse(response, Client.setPageData);
+            Client.services.handleResponse(response, Client.setPageData);
         } catch (error) {
             alert(error);
         }
@@ -17,10 +17,10 @@ document.querySelector('#form-button').addEventListener('click', () => {
     let inputToEval;
     if (activeFormInput === 'url') {
         inputToEval = form.urlToEval.value;
-        query = Client.Services.queryNlpUrl;
+        query = Client.services.queryNlpUrl;
     } else if (activeFormInput === 'text') {
         inputToEval = form.textToEval.value;
-        query = Client.Services.queryNlpText;
+        query = Client.services.queryNlpText;
     }
     submit(query, inputToEval);
 });

@@ -32,11 +32,12 @@ const Services = (function() {
                     queryNlpText: '/nlp/evaltext',
                     queryNlpUrl: '/nlp/evalurl',
                     handleResponse: function(response, callBack) {
+                        console.log(response);
                         response.cod = `${response.cod}`;
                         switch (true) {
                             case response.cod >= '200' && response.cod < '300':
-                                if ('weather' in response) {
-                                    this.serviceData = response;
+                                if ('content' in response) {
+                                    this.serviceData = content;
                                 }
                                 callBack();
                                 break;
