@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/client/app/index.js',
+    entry: ['babel-polyfill', './src/client/app/index.js'],
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
