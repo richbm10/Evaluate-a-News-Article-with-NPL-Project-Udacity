@@ -3,6 +3,7 @@
 const AYLIENTextAPI = require('aylien_textapi');
 
 const ServerServices = (function() {
+    const maxTweet = 280;
     let instance;
     return {
         getInstance: () => {
@@ -16,10 +17,17 @@ const ServerServices = (function() {
                             application_key: pAylienAppKey
                         });
                     },
-                    setSentimentAylienApiParam: function(type, mode, message) {
+                    setSentimentAylienApiMode: function(content) {
+                        if (content.length <= maxTweet) {
+                            return 'tweet';
+                        } else {
+                            return 'document';
+                        }
+                    },
+                    setSentimentAylienApiParam: function(type, message) {
                         return {
                             [type]: message.content,
-                            'mode': mode
+                            'mode': this.setSentimentAylienApiMode(message.content)
                         };
                     },
                     getSentimentAylienApi: async function(apiParam, resolve, reject) {

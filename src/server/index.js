@@ -32,9 +32,6 @@ const { ServerServices } = require('./services');
 const externalServices = ServerServices.getInstance();
 externalServices.set('a44a01f0', '27308ad3bbef8950fc2482fbe1cfc4d1');
 
-
-const projectData = {};
-
 function successMessage(pContent) {
     return {
         cod: 200,
@@ -52,7 +49,7 @@ function errorMessage(pContent) {
 }
 
 function requestAylienApi(endpoint, type, request, response) {
-    const apiParam = externalServices.setSentimentAylienApiParam(type, 'tweet', request.body);
+    const apiParam = externalServices.setSentimentAylienApiParam(type, request.body);
 
     externalServices.getSentimentAylienApi(apiParam, (externalResponse) => {
         message = successMessage(externalResponse);
@@ -68,11 +65,6 @@ function requestAylienApi(endpoint, type, request, response) {
 app.get('/', function(req, res) {
     res.sendFile('dist/index.html');
     logActivatedService('HTTP GET Service: /', '', 'index.html');
-})
-
-app.get('/all', (request, response) => {
-    response.send(projectData);
-    logActivatedService('HTTP GET Service: /all', '', projectData);
 });
 
 app.post('/nlp/evaltext', (request, response) => {
@@ -87,6 +79,5 @@ function logActivatedService(service, requestLog, responseLog) {
     console.log(service);
     console.log('\nBody Request:\n', requestLog);
     console.log('\nBody Response:\n', responseLog);
-    console.log('\nCurrent Project Data:\n', projectData);
     logActiveServer();
 }

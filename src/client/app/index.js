@@ -27,20 +27,18 @@ polarityIcon.data = icons.default;
 const subjectivityIcon = document.querySelector('#subjectivity-icon');
 subjectivityIcon.data = icons.default;
 
+const services = Services.getInstance();
+services.set('http://localhost:8000');
+
 function setPolarityIcon(polarityIcon) {
-    const polarity = Client.Services.serviceData.polarity;
-    console.log(polarity);
+    const polarity = services.serviceData.polarity;
     polarityIcon.data = icons.polarityIcons[polarity];
 }
 
 function setSubjectivityIcon(subjectivityIcon) {
-    const subjectivity = Client.Services.serviceData.subjectivity;
-    console.log(subjectivity);
+    const subjectivity = services.serviceData.subjectivity;
     subjectivityIcon.data = icons.subjectivityIcons[subjectivity];
 }
-
-const services = Services.getInstance();
-services.set('http://localhost:8000');
 
 const setPageData = () => {
     setPolarityIcon(polarityIcon);
