@@ -35,14 +35,14 @@
 
 #polarity-icon {
     grid-area: picon;
-    height: 20vh;
-    width: 25vw;
+    height: 60%;
+    width: 65%;
 }
 
 #subjectivity-icon {
     grid-area: sicon;
-    height: 30vh;
-    width: 35vw;
+    height: 80%;
+    width: 85%;
 }
 
 #polarity-label {
@@ -55,20 +55,19 @@
     color: $secondary-color;
 }
 
-@media only screen and (min-height: 768px) {
-    #polarity-icon {
-        height: 15vh;
-        width: 20vw;
-    }
-    #subjectivity-icon {
-        grid-area: sicon;
-        height: 20vh;
-        width: 25vw;
-    }
-}
-
-@media only screen and (orientation: landscape) and (min-height: 768px) {
-    #hero-img {
-        height: 45vh;
-    }
-}
+// @media only screen and (min-width: 768px) {
+//     #polarity-icon {
+//         height: 15vh;
+//         width: 20vw;
+//     }
+//     #subjectivity-icon {
+//         grid-area: sicon;
+//         height: 20vh;
+//         width: 25vw;
+//     }
+// }
+// @media only screen and (orientation: landscape) and (min-width: 768px) {
+//     #hero-img {
+//         height: 45vh;
+//     }
+// }
