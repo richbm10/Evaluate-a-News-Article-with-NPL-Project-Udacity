@@ -28,9 +28,11 @@ app.listen(port, () => {
 });
 
 // ServerServices for requesting external services
+const dotenv = require('dotenv');
+dotenv.config();
 const { ServerServices } = require('./services');
 const externalServices = ServerServices.getInstance();
-externalServices.set('a44a01f0', '27308ad3bbef8950fc2482fbe1cfc4d1');
+externalServices.set(process.env.AYLIEN_API_ID, process.env.AYLIEN_API_KEY);
 
 function successMessage(pContent) {
     return {
