@@ -1,16 +1,6 @@
-.inactive-base-content {
-    display: none;
-}
-
 #base {
     padding: 4vh 0;
     grid-area: 2/2/3/3;
-}
-
-#base-content {
-    width: 100%;
-    visibility: visible;
-    opacity: 1;
 }
 
 #hero-img {
@@ -26,6 +16,7 @@
     margin-top: 6vh;
     display: grid;
     height: 25vh;
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 20vh 5vh;
     grid-template-areas: "picon sicon" "plabel slabel";
@@ -55,19 +46,16 @@
     color: $secondary-color;
 }
 
-// @media only screen and (min-width: 768px) {
-//     #polarity-icon {
-//         height: 15vh;
-//         width: 20vw;
-//     }
-//     #subjectivity-icon {
-//         grid-area: sicon;
-//         height: 20vh;
-//         width: 25vw;
-//     }
-// }
-// @media only screen and (orientation: landscape) and (min-width: 768px) {
-//     #hero-img {
-//         height: 45vh;
-//     }
-// }
+@media only screen and (orientation: landscape) and (min-width: 768px) {
+    #hero-img {
+        height: 65vh;
+    }
+    #polarity-icon {
+        height: 70%;
+        width: 75%;
+    }
+    #subjectivity-icon {
+        height: 90%;
+        width: 95%;
+    }
+}

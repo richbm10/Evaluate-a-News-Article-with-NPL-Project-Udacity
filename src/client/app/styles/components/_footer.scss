@@ -1,9 +1,30 @@
 .footer-section-content {
-    margin-left: 5%;
+    margin-left: 5vw;
 }
 
 #footer {
     grid-area: 3/1/4/4;
     background-color: $secondary-color;
-    padding-left: 6%;
+    display: grid;
+    padding: 5% 0;
+    grid-template-columns: 1fr 95vw 1fr;
+}
+
+#footer-content {
+    grid-area: 1/2/2/3;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    #footer-content {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 768px) {
+    #footer {
+        padding: 3% 0;
+        grid-template-columns: 1fr 65vw 1fr;
+    }
 }

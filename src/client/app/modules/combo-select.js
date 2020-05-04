@@ -1,7 +1,6 @@
 let activeFormInput = 'url';
 
 function swapBaseContent(selectedOption) {
-    document.querySelector('#base-content').classList.toggle('inactive-base-content');
     if (selectedOption === 'textEval') {
         document.querySelector('#form-txt-area').style.display = 'block';
         document.querySelector('#form-input').style.display = 'none';

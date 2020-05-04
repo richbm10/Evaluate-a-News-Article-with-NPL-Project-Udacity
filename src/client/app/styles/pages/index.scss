@@ -11,5 +11,11 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 95vw 1fr;
-    grid-template-rows: 10vh 1fr 35vh;
+    grid-template-rows: 10vh 1fr 1fr;
+}
+
+@media only screen and (orientation: landscape) and (min-width: 768px) {
+    body {
+        grid-template-columns: 1fr 65vw 1fr;
+    }
 }

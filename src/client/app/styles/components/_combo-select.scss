@@ -4,7 +4,7 @@
     top: 40%;
     left: 5%;
     display: grid;
-    width: 40%;
+    width: 45%;
     grid-template-columns: 7vw 1fr;
     grid-template-rows: 4vh 2vh 1fr;
     grid-template-areas: "icon select" "line line" "e op";
@@ -56,27 +56,30 @@
     }
 }
 
-// @media only screen and (min-width: 768px) {
-//     #combo-select {
-//         width: 30vw;
-//         #h-line {
-//             border-top: 2px solid $primary-color;
-//         }
-//         #drop-down-icon {
-//             height: 5vh;
-//             width: 5vw;
-//         }
-//     }
-// }
-// @media only screen and (orientation: landscape) and (min-width: 768px) {
-//     #combo-select {
-//         width: 25vw;
-//         #h-line {
-//             border-top: 1px solid $primary-color;
-//         }
-//         #drop-down-icon {
-//             height: 4vh;
-//             width: 4vw;
-//         }
-//     }
-// }
+@media only screen and (min-width: 768px) {
+    #combo-select {
+        width: 35%;
+        grid-template-columns: 5vw 1fr;
+        #h-line {
+            border-top: 2px solid $primary-color;
+        }
+        #drop-down-icon {
+            height: 5vh;
+            width: 5vw;
+        }
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 768px) {
+    #combo-select {
+        width: 25%;
+        grid-template-columns: 5vw 1fr;
+        #h-line {
+            border-top: 1px solid $primary-color;
+        }
+        #drop-down-icon {
+            height: 5vh;
+            width: 5vw;
+        }
+    }
+}
