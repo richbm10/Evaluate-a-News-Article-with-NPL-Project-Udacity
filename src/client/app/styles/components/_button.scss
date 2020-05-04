@@ -5,4 +5,9 @@
     height: 5vh;
     width: 30vw;
     text-align: center;
+    cursor: pointer;
+}
+
+.app-button:hover {
+    background-color: $third-color;
 }
