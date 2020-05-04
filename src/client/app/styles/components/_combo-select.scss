@@ -18,8 +18,8 @@
     }
     #selected {
         grid-area: select;
-        place-self: stretch;
-        width: 110%;
+        place-self: center;
+        width: 100%;
         cursor: pointer;
     }
     #h-line {
