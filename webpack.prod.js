@@ -38,7 +38,7 @@ module.exports = {
                 test: /\.(png|jp(e*)g|svg)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 8000, // Convert images < 8kb to base64 strings
+                    limit: 200000, // Convert images < 200kb to base64 strings
                     name: 'assets/images/[hash]-[name].[ext]'
                 }
             }

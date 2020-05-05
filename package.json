@@ -4,11 +4,20 @@
     "description": "Run NLP on articles or blogs found on other websites.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "start-server": "node src/server/index.js",
         "build-dev-app": "webpack --config webpack.dev.js",
         "build-prod-app": "webpack --config webpack.prod.js",
         "build-dev-server-app": "webpack-dev-server  --config webpack.dev.js --open"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__tests__/__mocks__/fileMock.js",
+            "\\.(css|less)$": "<rootDir>/__tests__/__mocks__/styleMock.js"
+        },
+        "testPathIgnorePatterns": [
+            "<rootDir>/node_modules/"
+        ]
     },
     "repository": {
         "type": "git",
@@ -37,6 +46,7 @@
         "css-loader": "^3.5.3",
         "file-loader": "^6.0.0",
         "html-webpack-plugin": "^4.2.1",
+        "jest": "^26.0.1",
         "mini-css-extract-plugin": "^0.9.0",
         "node-sass": "^4.14.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
