@@ -83,3 +83,5 @@ function logActivatedService(service, requestLog, responseLog) {
     console.log('\nBody Response:\n', responseLog);
     logActiveServer();
 }
+
+exports = { successMessage, errorMessage, externalServices };
