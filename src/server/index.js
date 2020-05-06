@@ -52,6 +52,7 @@ function errorMessage(pContent) {
 
 function requestAylienApi(endpoint, type, request, response) {
     const apiParam = externalServices.setSentimentAylienApiParam(type, request.body);
+    let message;
 
     externalServices.getSentimentAylienApi(apiParam, (externalResponse) => {
         message = successMessage(externalResponse);
@@ -83,5 +84,3 @@ function logActivatedService(service, requestLog, responseLog) {
     console.log('\nBody Response:\n', responseLog);
     logActiveServer();
 }
-
-exports = { successMessage, errorMessage, externalServices };

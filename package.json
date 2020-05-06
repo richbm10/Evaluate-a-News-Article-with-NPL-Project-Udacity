@@ -17,8 +17,7 @@
         },
         "testPathIgnorePatterns": [
             "<rootDir>/node_modules/"
-        ],
-        "collectCoverage": true
+        ]
     },
     "repository": {
         "type": "git",
