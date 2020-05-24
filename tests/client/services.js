@@ -1,4 +1,8 @@
 //Services
+/*
+fetch is not available in Node, which is where Jest is running your tests. Is it an experimental browser technology.
+So the node_module node-fetch must be required for using fetch in node.
+*/
 const fetch = require('node-fetch');
 const Services = (function() {
     let instance;
