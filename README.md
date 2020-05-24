@@ -13,6 +13,10 @@ Photos taken from www.pexels.com.
 Objective:
 Implement the application using the acquired knowledge of Webpack configuration, for developing in a development and production environments. Also, use different loaders and plugins to enhance productivity and the advantages of Webpack.
 
+Installation:
+- npm install: for installing all devDependencies and dependencies of the package.json
+- npm install --production: for installing only the dependencies of the package.json
+
 Package scripts:
 - start-testing-server: for starting the testing server before running the jest testing
 - test: for running the jest tests
