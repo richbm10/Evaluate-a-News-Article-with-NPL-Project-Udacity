@@ -6,6 +6,7 @@
     "scripts": {
         "test": "jest",
         "start-server": "node src/server/index.js",
+        "start-testing-server": "node tests/server/index.js",
         "build-dev-app": "webpack --config webpack.dev.js",
         "build-prod-app": "webpack --config webpack.prod.js",
         "build-dev-server-app": "webpack-dev-server  --config webpack.dev.js --open"
@@ -65,6 +66,7 @@
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "node-fetch": "^2.6.0"
     }
 }
