@@ -9,7 +9,7 @@ function validateUrl(value) { //taken from https://stackoverflow.com/questions/8
 }
 
 function submit(query, inputToEval, expectedOutput) {
-    services.postRequestLocalServer(query, { 'content': inputToEval }).then((response) => {
+    return services.postRequestLocalServer(query, { 'content': inputToEval }).then((response) => {
         try {
             services.handleResponse(response, () => {
                 expect(services.serviceData).toMatchObject(expectedOutput);
@@ -30,36 +30,35 @@ function formButtonClick(form, expectedOutput) {
         inputToEval = form.urlToEval;
         query = services.queryNlpUrl;
         if (validateUrl(inputToEval)) {
-            submit(query, inputToEval, expectedOutput);
+            return submit(query, inputToEval, expectedOutput);
         } else {
             expect('Error Not Valid URL Structure').toMatchObject(expectedOutput);
         }
     } else if (activeFormInput === 'text') {
         inputToEval = form.textToEval;
         query = services.queryNlpText;
-        submit(query, inputToEval, expectedOutput);
+        return submit(query, inputToEval, expectedOutput);
     }
 }
 
 
 describe("submit form", () => {
-    test("it should respond a success message with polarity and subjectivity for each of them", () => {
-        const input = [
-            // { activeFormInput: 'url', urlToEval: 'https://codequickie.com/what-is-python-and-what-can-you-do-with-it/' },
-            { activeFormInput: 'text', textToEval: 'I had a very good time in the restaurant, the service was really good.' }
-        ];
+    const input = [
+        // { activeFormInput: 'url', urlToEval: 'https://codequickie.com/what-is-python-and-what-can-you-do-with-it/' },
+        { activeFormInput: 'text', textToEval: 'I had a very good time in the restaurant, the service was really good.' }
+    ];
 
-        const output = {
-            cod: 200,
-            message: 'Success',
-            content: {
-                polarity: expect.stringMatching(/positive|negative|neutral /),
-                subjectivity: expect.stringMatching(/subjective|objective/)
-            }
-        };
-
-        for (let formPrototype of input) {
-            formButtonClick(formPrototype, output);
+    const output = {
+        cod: 200,
+        message: 'Success',
+        content: {
+            polarity: expect.stringMatching(/positive|negative|neutral/),
+            subjectivity: expect.stringMatching(/subjective|objective/)
         }
+    };
+
+    it('should respond a success message with polarity and subjectivity', () => {
+        expect.assertions(1);
+        return formButtonClick(input[0], output);
     });
 });
