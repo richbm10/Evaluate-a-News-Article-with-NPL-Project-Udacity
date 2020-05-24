@@ -77,15 +77,15 @@ describe("[submit form]", () => {
         return formButtonClick(input[2], clientErrorOutput);
     });
 
-    it('[url-form]-[should throw 500 Internal Server Error]', () => {
+    it('[url-form]-[should throw 503 Server Error Connection Timeout]', () => {
         expect.assertions(1);
         return formButtonClick(input[3], serverErrorOutput);
-    });
+    }, 10000);
 
-    it('[text-form]-[should throw 500 Internal Server Error]', () => {
+    it('[text-form]-[should throw 503 Server Error Connection Timeout]', () => {
         expect.assertions(1);
         return formButtonClick(input[4], serverErrorOutput);
-    });
+    }, 10000);
 
     it('[text-form]-[should retrieve polarity and subjectivity]', () => {
         expect.assertions(1);
