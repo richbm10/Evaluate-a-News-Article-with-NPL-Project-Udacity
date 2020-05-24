@@ -15,7 +15,7 @@ function submit(query, inputToEval, expectedOutput) {
                 expect(services.serviceData).toMatchObject(expectedOutput);
             });
         } catch (error) {
-            //expect(error).toMatchObject(expectedOutput);
+            expect(error).toMatchObject(expectedOutput);
         }
     }).catch(() => {
         expect('503 Server Error Connection').toMatch(expectedOutput);
@@ -49,12 +49,8 @@ describe("submit form", () => {
     ];
 
     const output = {
-        cod: 200,
-        message: 'Success',
-        content: {
-            polarity: expect.stringMatching(/positive|negative|neutral/),
-            subjectivity: expect.stringMatching(/subjective|objective/)
-        }
+        polarity: expect.stringMatching(/positive|negative|neutral/),
+        subjectivity: expect.stringMatching(/subjective|objective/)
     };
 
     it('should respond a success message with polarity and subjectivity', () => {
