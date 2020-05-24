@@ -30,6 +30,10 @@ textarea,
     font-size: 1.6rem;
 }
 
+a {
+    color: $font-color;
+}
+
 @media only screen and (min-width: 768px) {
     h1 {
         font-size: 2.8rem;
